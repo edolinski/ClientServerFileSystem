@@ -59,17 +59,17 @@ Lastly, the server will abort any transaction for which no request has been rece
 
 * __Example__ `COMMIT` __Request/Response Sequence:__
 
- Client: `NEW_TXN` `-1` `0` `12` `new_file.txt`
+  Client: `NEW_TXN` `-1` `0` `12` `new_file.txt`
 
- Server: `ACK` `12345` `0` `0` `0`
+  Server: `ACK` `12345` `0` `0` `0`
 
- Client: `WRITE` `12345` `1` `56` `Here is my data for transaction 12345 to write on commit`
+  Client: `WRITE` `12345` `1` `56` `Here is my data for transaction 12345 to write on commit`
 
- Server: `ACK` `12345` `1` `0` `0`
+  Server: `ACK` `12345` `1` `0` `0`
 
- Client: `COMMIT` `12345` `1` `0`
+  Client: `COMMIT` `12345` `1` `0`
 
- Server: `ACK` `12345` `1` `0` `0`
+  Server: `ACK` `12345` `1` `0` `0`
 
 * __Example__ `READ` __Request/Response Sequence:__
 
@@ -89,13 +89,13 @@ __With Environment Variables:__
 
 3. Set the following environment variables:
 
- GTEST_DIR – set to \<path_to_dir_containing_googletest-1.8.x\>/googletest-1.8.x/googletest
+  GTEST_DIR – set to \<path_to_dir_containing_googletest-1.8.x\>/googletest-1.8.x/googletest
 
- GTEST_FRAMEWORK_DIR – set to \<path_to_dir_containing_gtest.framework\> built in step 2
+  GTEST_FRAMEWORK_DIR – set to \<path_to_dir_containing_gtest.framework\> built in step 2
 
- CLIENT_SERVER_SHARED_DIR – set to \<path_to_ClientServerShared_dir\>
+  CLIENT_SERVER_SHARED_DIR – set to \<path_to_ClientServerShared_dir\>
 
- > For help launching Xcode with environment variables please see: https://stackoverflow.com/questions/33235958/xcode-doesnt-recognize-environment-variables
+  > For help launching Xcode with environment variables please see: https://stackoverflow.com/questions/33235958/xcode-doesnt-recognize-environment-variables
 
 4. Navigate to ClientServerTest and open and build ClientServerTest.xcodeproj in Xcode
 
