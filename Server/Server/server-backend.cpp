@@ -52,8 +52,8 @@ using namespace EmersonClientServerFileSystem;
 
 ServerBackend::ServerBackend(string in_directory) : m_directory(!in_directory.empty() && !('/' == in_directory.back()) ? move(in_directory) + '/' : move(in_directory))
 {
-    // Note: cannot initialize functions in ctor because "this" address not resolved until
-    // after call to this ctor
+    // TODO: initialize functions in ctor (Note: this is safe as long as ServerBackend remains non-
+    //       copyable and non-movable as otherwise "this" pointer is not recaptured on copy/move)
 }
 
 int ServerBackend::getContentLength(const char * in_request_header, string& out_server_response_str, bool& out_transaction_in_progress)
